@@ -106,6 +106,14 @@ nmap <F7> :TrinityToggleTagList<CR>
 " " Open and close the NERD_tree.vim separately 
 nmap <F8> :TrinityToggleNERDTree<CR>
 
+" Cscope configs
+" make cscope mapping to work Ctrl+\+G and so on
+nnoremap <leader>C :setlocal cscoperelative!<cr>
+
+" Mouse configs - in modes `a` and `m`
+nnoremap <leader>M :setlocal mouse=c<cr>
+nnoremap <leader>A :setlocal mouse=a<cr>
+
 "Source Explorer configs
 let g:SrcExpl_winHeight = 8 
 let g:SrcExpl_refreshTime = 100 
