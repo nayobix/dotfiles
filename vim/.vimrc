@@ -137,6 +137,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/Trinity'
 Plugin 'vim-scripts/SrcExpl'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-sleuth.git'
 "Plugin 'artur-shaik/vim-javacomplete2'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
