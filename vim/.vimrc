@@ -37,10 +37,9 @@ set visualbell                  " don't beep
 set noerrorbells                " don't beep
 set showcmd                     " show (partial) command in the last line of the screen
                                 "    this also shows visual selection info 
-" Pathogen and Vundle
+" Vundle
+" First step !!! -> git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 filetype off
-call pathogen#infect()
-call pathogen#helptags()
 filetype plugin indent on       " enable detection, plugins and indenting in one step
 set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
@@ -136,6 +135,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/Trinity'
 Plugin 'vim-scripts/SrcExpl'
+Plugin 'vim-scripts/taglist.vim' " Should `apt-get install ctags` also
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sleuth.git'
 "Plugin 'artur-shaik/vim-javacomplete2'
