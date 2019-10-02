@@ -99,11 +99,12 @@ set cursorline                  " underline the current line, for quick orientat
 " Open and close all the three plugins on the same time 
 nmap <F5> :TrinityToggleAll<CR>
 " " Open and close the srcexpl.vim separately 
-nmap <F6> :TrinityToggleSourceExplorer<CR>
+"nmap <F6> :TrinityToggleSourceExplorer<CR>
 " " Open and close the taglist.vim separately 
-nmap <F7> :TrinityToggleTagList<CR>
+"nmap <F7> :TrinityToggleTagList<CR>
 " " Open and close the NERD_tree.vim separately 
-nmap <F8> :TrinityToggleNERDTree<CR>
+"nmap <F8> :TrinityToggleNERDTree<CR>
+"nmap <F8> :TagbarToggle<CR>
 
 " Cscope configs
 " make cscope mapping to work Ctrl+\+G and so on
@@ -120,7 +121,8 @@ let g:SrcExpl_jumpKey = "<ENTER>"
 let g:SrcExpl_gobackKey = "<SPACE>" 
 let g:SrcExpl_pluginList = [
     \ "__Tag_List__",
-    \ "_NERD_tree_"
+    \ "_NERD_tree_",
+    \ "Source_Explorer"
     \ ] 
 " // Enable/Disable the local definition searching, and note that this is not 
 " // guaranteed to work, the Source Explorer doesn't check the syntax for now. 
@@ -155,6 +157,16 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+"Syntastic config
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pylint']
+
 " Vundle Plugins
 filetype off 
 " set the runtime path to include Vundle and initialize
@@ -173,10 +185,12 @@ Plugin 'rdnetto/YCM-Generator'
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 Plugin 'Raimondi/delimitMate'
+" Plugin 'majutsushi/tagbar'
+Plugin 'kien/ctrlp.vim'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
-"Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'vim-syntastic/syntastic'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
